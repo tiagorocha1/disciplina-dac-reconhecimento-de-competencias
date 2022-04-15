@@ -11,12 +11,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.GenericGenerator;
+/*
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+*/
 @Entity
-public class User implements Serializable, UserDetails {
+public class User implements Serializable {//, UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
@@ -32,10 +33,12 @@ public class User implements Serializable, UserDetails {
 	private List<Profile> profiles;
 
 	public User(String email, String password) {
-		
+/*		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		this.email = email;
 		this.password = encoder.encode(password);
+		
+		*/
 	}
 	
 	public User() {
@@ -104,6 +107,8 @@ public class User implements Serializable, UserDetails {
 	public void setProfiles(List<Profile> profiles) {
 		this.profiles = profiles;
 	}
+	
+	/*
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -139,5 +144,5 @@ public class User implements Serializable, UserDetails {
 	public boolean isEnabled() {
 		return true;
 	}
-
+*/
 }

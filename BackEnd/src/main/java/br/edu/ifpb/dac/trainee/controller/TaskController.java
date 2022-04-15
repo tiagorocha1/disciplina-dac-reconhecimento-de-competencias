@@ -68,7 +68,7 @@ public class TaskController {
 	@CrossOrigin
 	public ResponseEntity<TaskDto> adicionar(@RequestBody @Valid TaskFormAdd form, UriComponentsBuilder uriBuilder) {
 
-		Task task = form.converter();
+		Task task = form.converter(taskService);
 		task = taskService.save(task);
 
 		URI uri = uriBuilder.path("/task/{id}").buildAndExpand(task.getId()).toUri();
@@ -93,7 +93,7 @@ public class TaskController {
 
 		Optional<Task> optional = taskService.getOptionalTask(id);
 		if (optional.isPresent()) {
-			Task task = form.update(id);
+			Task task = form.update(id,taskService);
 			return ResponseEntity.ok(new TaskDto(task));
 		}
 

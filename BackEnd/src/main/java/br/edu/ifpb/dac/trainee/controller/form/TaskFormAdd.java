@@ -14,8 +14,7 @@ public class TaskFormAdd {
 	private String description;
 	private boolean done;
 	private long categoryID;
-	@Autowired
-	private TaskService taskService;
+	
 
 	public String getDescription() {
 		return description;
@@ -37,7 +36,7 @@ public class TaskFormAdd {
 		this.categoryID = categoryID;
 	}
 
-	public Task converter() {
+	public Task converter(TaskService taskService) {
 
 		Task task = null;
 

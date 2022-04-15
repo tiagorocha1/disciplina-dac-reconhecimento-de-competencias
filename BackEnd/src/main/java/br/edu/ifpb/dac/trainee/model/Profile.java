@@ -7,10 +7,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.springframework.security.core.GrantedAuthority;
+//import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-public class Profile implements Serializable, GrantedAuthority {
+public class Profile implements Serializable {//, GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,8 +36,10 @@ public class Profile implements Serializable, GrantedAuthority {
 		this.name = name;
 	}
 
+	/*
 	@Override
 	public String getAuthority() {
 		return this.name;
 	}
+	*/
 }

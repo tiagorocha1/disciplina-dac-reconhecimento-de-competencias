@@ -16,9 +16,6 @@ public class TaskFormUpdate {
 	private boolean done;
 	private long categoryId;
 	
-	@Autowired
-	private TaskService taskService;
-
 	public boolean isDone() {
 		return done;
 	}
@@ -35,7 +32,7 @@ public class TaskFormUpdate {
 		this.description = description;
 	}
 
-	public Task update(Long id) {
+	public Task update(Long id, TaskService taskService) {
 
 		Task task = taskService.getTask(id);
 		
