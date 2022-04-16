@@ -6,10 +6,41 @@
 <strong> Professor: </strong> Elenilson Vieira </br>
 <strong> Aluno: </strong> Tiago Rocha </br>
 <strong> Período: </strong> 2022.1 </br>
-  
- ## Instalação
+
+##
+
+### Avaliação - Requisitos
+
+  Tema livre:
+ - Deve envolver ao menos 2 entidades
+ - Algo útil
  
- ### 1) Executar o script para configuração inicial do Banco - Banco de dados MySQL
+  É necessário utilizar as tecnologias da disciplina:
+  - Backend (Java + Spring + Spring Boot + Spring Data JPA + Spring MVC + Spring Tool Suite + MySQL)
+  - Frontend (ReactJS)
+  - Deve fazer uso de Autenticação Controle de versão
+  - GIT
+  
+  Entrega:
+  - Link do GIT
+  - Vídeo explicativo o código e demonstrando o funcionamento
+  - Manual para continuação do desenvolvimento (passo a passo para baixar o projeto e fazê-lo rodar)
+  - Apresentação (20 minutos)
+   
+ ##
+ ### Trainee Tasks
+_A system for managing trainees tasks_
+
+![N|Solid](https://pivotal.gallerycdn.vsassets.io/extensions/pivotal/vscode-boot-dev-pack/0.1.0/1629148309593/Microsoft.VisualStudio.Services.Icons.Default)
+![N|Solid](https://raw.githubusercontent.com/GozAttila/GozAttila/main/assets/4_React.png)
+
+
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+
+##
+ ### Instalação
+ 
+ #### 1) Executar o script para configuração inicial do Banco - Banco de dados MySQL
  Usuário padrão <strong>admin</strong> com  senha <strong>123</strong>
    
     INSERT INTO `profile` (`id`, `name`) VALUES (1, 'ROLE_ALUNO');
@@ -24,9 +55,9 @@
     INSERT INTO `category` (`id`, `name`) VALUES (4, 'MANUTENCAO PC');
     INSERT INTO `category` (`id`, `name`) VALUES (5, 'MANUTENCAO REDE');
     
-### 2) Deploy BackEnd
+#### 2) Deploy BackEnd
 
-### 3) Deply FronEnd
+#### 3) Deply FronEnd
 
 
     
