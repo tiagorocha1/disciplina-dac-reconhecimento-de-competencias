@@ -13,7 +13,7 @@ public class TaskFormAdd {
 	private String description;
 	private boolean done;
 	private long categoryID;
-	private String token;
+	
 
 	public String getDescription() {
 		return description;
@@ -39,13 +39,6 @@ public class TaskFormAdd {
 		this.categoryID = categoryID;
 	}
 
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
 
 	public Task converter(TaskService taskService) {
 

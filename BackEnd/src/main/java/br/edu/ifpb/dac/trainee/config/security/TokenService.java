@@ -2,6 +2,8 @@ package br.edu.ifpb.dac.trainee.config.security;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -52,5 +54,19 @@ public class TokenService {
 		Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
 		return Long.parseLong(claims.getSubject());
 	}
+	
+	public String recuperarToken(HttpServletRequest request) {
+
+		String token = request.getHeader("Authorization");
+		
+		if(token == null || token.isEmpty() || token.isBlank() || !token.startsWith("Bearer ") ) {
+			return null;
+		}
+		
+		
+		return token.substring(7, token.length());
+	}
+
+	
 
 }

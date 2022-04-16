@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,15 +41,23 @@ public class TaskController {
 	private TaskService taskService;
 
 	@GetMapping	
-	public List<TaskDto> list(@RequestParam(required = false) String search) {
+	public List<TaskDto> list(@RequestParam(required = false) String search, HttpServletRequest request) {
+		
+		String token = taskService.getToken(request);
 		
 		if (search==null || search.isEmpty()) {
-			List<Task>  tasks = taskService.listAll();
-			return TaskDto.toConvert(tasks);
+			List<Task>  tasks = taskService.listAll(token);
+			
+			if(tasks!=null) {
+				return TaskDto.toConvert(tasks);	
+			}else {
+				return null;
+			}
+			
 		}else {
 			List<Task>  tasks = null;
 			try {
-				  tasks = taskService.searchDescription(search);
+				  tasks = taskService.searchDescription(search, token);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -68,12 +77,14 @@ public class TaskController {
 	@Transactional
 	@CacheEvict(value = "taskList", allEntries = true)
 	@CrossOrigin
-	public ResponseEntity<TaskDto> adicionar(@RequestBody @Valid TaskFormAdd form, UriComponentsBuilder uriBuilder) {
+	public ResponseEntity<TaskDto> adicionar(@RequestBody @Valid TaskFormAdd form, UriComponentsBuilder uriBuilder,  HttpServletRequest request) {
 
+		String token = taskService.getToken(request);
+		
 		Task task = form.converter(taskService);
 		
 
-		task = taskService.save(task, form.getToken());
+		task = taskService.save(task, token);
 		
 		if(task!=null) {
 			URI uri = uriBuilder.path("/task/{id}").buildAndExpand(task.getId()).toUri();

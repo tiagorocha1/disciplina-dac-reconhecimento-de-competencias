@@ -4,6 +4,9 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -69,14 +72,28 @@ public class TaskService {
 		
 	}
 
-	public List<Task> listAll() {
+	public List<Task> listAll(String token) {
 
-		return taskRepository.findAll();
+		Long idUsuario = tokenService.getIdUsuario(token);
+		Optional<User> optional = userRepository.findById(idUsuario);
+		
+		if(optional.isPresent()) {
+			return taskRepository.findByUser(optional.get());
+		}
+		
+		return null;
 	}
 
-	public List<Task> searchDescription(String search) {
+	public List<Task> searchDescription(String search,String token) {
 
-		return taskRepository.findByDescriptionContains(search);
+		Long idUsuario = tokenService.getIdUsuario(token);
+		Optional<User> optional = userRepository.findById(idUsuario);
+		
+		if(optional.isPresent()) {
+			return taskRepository.findByDescriptionContainsAndUser(search,optional.get().getId());	
+		}
+		
+		return null;
 	}
 
 	public Task save(Task task, String token) {
@@ -115,6 +132,11 @@ public class TaskService {
 		list.forEach( c -> listDto.add(new CategoryDto(c)));
 		
 		return listDto;
+	}
+
+	public String getToken(HttpServletRequest request) {
+
+		return tokenService.recuperarToken(request);
 	}
 
 }
