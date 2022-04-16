@@ -9,7 +9,7 @@
   
  ## Instalação
  
- ### Script para configuração inicial do Banco
+ ### 1) Executar o script para configuração inicial do Banco - Banco de dados MySQL
  Usuário padrão <strong>admin</strong> com  senha <strong>123</strong>
    
     INSERT INTO `profile` (`id`, `name`) VALUES (1, 'ROLE_ALUNO');
