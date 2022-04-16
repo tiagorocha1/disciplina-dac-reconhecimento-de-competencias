@@ -29,7 +29,7 @@
    
  ##
  ### Trainee Tasks
-_A system for managing trainees tasks_
+_A system for recording tasks_
 
 ![N|Solid](https://pivotal.gallerycdn.vsassets.io/extensions/pivotal/vscode-boot-dev-pack/0.1.0/1629148309593/Microsoft.VisualStudio.Services.Icons.Default)
 ![N|Solid](https://raw.githubusercontent.com/GozAttila/GozAttila/main/assets/4_React.png)
