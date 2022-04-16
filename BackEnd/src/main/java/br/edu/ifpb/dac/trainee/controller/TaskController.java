@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import br.edu.ifpb.dac.trainee.controller.dto.CategoryDto;
 import br.edu.ifpb.dac.trainee.controller.dto.TaskDetailDto;
 import br.edu.ifpb.dac.trainee.controller.dto.TaskDto;
 import br.edu.ifpb.dac.trainee.controller.form.TaskFormAdd;
@@ -70,11 +71,19 @@ public class TaskController {
 	public ResponseEntity<TaskDto> adicionar(@RequestBody @Valid TaskFormAdd form, UriComponentsBuilder uriBuilder) {
 
 		Task task = form.converter(taskService);
-		task = taskService.save(task);
+		
 
-		URI uri = uriBuilder.path("/task/{id}").buildAndExpand(task.getId()).toUri();
+		task = taskService.save(task, form.getToken());
+		
+		if(task!=null) {
+			URI uri = uriBuilder.path("/task/{id}").buildAndExpand(task.getId()).toUri();
 
-		return ResponseEntity.created(uri).body(new TaskDto(task));
+			return ResponseEntity.created(uri).body(new TaskDto(task));			
+		}else {
+			return ResponseEntity.badRequest().body(new TaskDto(task));
+		}
+
+
 	}
 
 	@GetMapping("/{id}")
@@ -118,10 +127,10 @@ public class TaskController {
 	}
 	
 	@GetMapping("/category")
-	public ResponseEntity<List<Category>> category() {
-		List<Category> categories = taskService.listCategory();
+	public ResponseEntity<List<CategoryDto>> category() {
+		 
 		
-	   return ResponseEntity.ok(categories);
+	   return ResponseEntity.ok(taskService.listCategoryDto());
 		
 
 		

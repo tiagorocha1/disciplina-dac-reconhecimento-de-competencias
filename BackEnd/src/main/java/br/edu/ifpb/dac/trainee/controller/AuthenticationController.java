@@ -50,6 +50,7 @@ public class AuthenticationController {
 
 	@PostMapping("validateToken")	
 	public ResponseEntity<TokenDto> validateToken(String token) {
+		System.out.println(token);
 				
 		if(tokenService.isValid(token)) {
 			return ResponseEntity.ok().body(new TokenDto(token, true));	

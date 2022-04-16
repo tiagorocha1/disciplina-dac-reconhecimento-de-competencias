@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import br.edu.ifpb.dac.trainee.model.User;
 import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -21,17 +22,16 @@ public class TokenService {
 	private String secret;
 
 	public String gerarToken(Authentication authentication) {
-		User usuario = (User) authentication.getPrincipal();
+		User logado = (User) authentication.getPrincipal();
 		Date hoje = new Date();
 		Date dataDeExpiracao = new Date(hoje.getTime() + Long.parseLong(expiration));
-
-		return Jwts.builder().
-				setIssuer("Api System Trainee").
-				setSubject(usuario.getId().toString())
-				.setIssuedAt(hoje)
-				.setExpiration(dataDeExpiracao)
-				.signWith(SignatureAlgorithm.HS256, secret)
-				.compact();
+		
+		return Jwts.builder().setIssuer("Api System Trainee")
+							.setSubject(logado.getId().toString())
+							.setIssuedAt(hoje)
+							.setExpiration(dataDeExpiracao)
+							.signWith(SignatureAlgorithm.HS256, secret)
+							.compact();
 	}
 
 	public boolean isValid(String token) {
@@ -39,15 +39,17 @@ public class TokenService {
 		try {
 
 			Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token);
+
 			return true;
 		} catch (Exception e) {
+			// Token invalido gera exception
 			return false;
 		}
 
 	}
 
-	public Long getIdUsuario(String token) {		
-		Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();		
+	public Long getIdUsuario(String token) {
+		Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
 		return Long.parseLong(claims.getSubject());
 	}
 

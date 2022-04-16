@@ -13,7 +13,7 @@ public class TaskFormAdd {
 	private String description;
 	private boolean done;
 	private long categoryID;
-	
+	private String token;
 
 	public String getDescription() {
 		return description;
@@ -31,8 +31,20 @@ public class TaskFormAdd {
 		this.done = done;
 	}
 
-	public void setcategoryID(long categoryID) {
+	public long getCategoryID() {
+		return categoryID;
+	}
+
+	public void setCategoryID(long categoryID) {
 		this.categoryID = categoryID;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
 	}
 
 	public Task converter(TaskService taskService) {
@@ -40,9 +52,9 @@ public class TaskFormAdd {
 		Task task = null;
 
 		Category category = taskService.getCategory(categoryID);
-		
+
 		task = new Task(description, done, category);
-		
+
 		return task;
 
 	}

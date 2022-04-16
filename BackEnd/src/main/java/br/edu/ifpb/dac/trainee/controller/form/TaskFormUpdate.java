@@ -43,10 +43,13 @@ public class TaskFormUpdate {
 		} else {
 			task.setFinishDate(null);
 		}
+		if(this.categoryId != 0) {
+			Category category = taskService.getCategory(categoryId);
+			task.setCategory(category);
+		}
 		
-		Category category = taskService.getCategory(categoryId);
 		
-		task.setCategory(category);
+		
 		
 		return taskService.update(task);
 				

@@ -1,22 +1,34 @@
 package br.edu.ifpb.dac.trainee.controller.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
+import br.edu.ifpb.dac.trainee.config.security.TokenService;
+import br.edu.ifpb.dac.trainee.controller.dto.CategoryDto;
 import br.edu.ifpb.dac.trainee.exception.TaskFormException;
 import br.edu.ifpb.dac.trainee.model.Category;
 import br.edu.ifpb.dac.trainee.model.Task;
+import br.edu.ifpb.dac.trainee.model.User;
 import br.edu.ifpb.dac.trainee.repository.CategoryRepository;
 import br.edu.ifpb.dac.trainee.repository.TaskRepository;
+import br.edu.ifpb.dac.trainee.repository.UserRepository;
 
 @Service
 public class TaskService {
 
 	@Autowired
 	private CategoryRepository categoryRepsitory;
+	
+	@Autowired
+	private TokenService tokenService;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@Autowired
 	private TaskRepository taskRepository;
@@ -67,8 +79,17 @@ public class TaskService {
 		return taskRepository.findByDescriptionContains(search);
 	}
 
-	public Task save(Task task) {
-		return taskRepository.save(task);		
+	public Task save(Task task, String token) {
+		
+		Long idUsuario = tokenService.getIdUsuario(token);
+		
+		Optional<User> user = userRepository.findById(idUsuario);
+		
+		if(user.isPresent()) {			
+			task.setUser(user.get());			
+			return taskRepository.save(task);
+		}
+		return null;
 	}
 
 	public Optional<Task> getOptionalTask(Long id) {
@@ -83,6 +104,17 @@ public class TaskService {
 	public List<Category> listCategory() {
  
 		return categoryRepsitory.findAll();
+	}
+
+	public List<CategoryDto> listCategoryDto() {
+
+		List<Category> list = categoryRepsitory.findAll();
+		
+		ArrayList<CategoryDto> listDto = new ArrayList<CategoryDto>();
+		
+		list.forEach( c -> listDto.add(new CategoryDto(c)));
+		
+		return listDto;
 	}
 
 }
