@@ -7,7 +7,6 @@ import org.springframework.data.web.config.EnableSpringDataWebSupport;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-
 @SpringBootApplication
 @EnableSpringDataWebSupport
 @EnableCaching
@@ -15,6 +14,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class TraineeApplication {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(TraineeApplication.class, args);
 	}
 

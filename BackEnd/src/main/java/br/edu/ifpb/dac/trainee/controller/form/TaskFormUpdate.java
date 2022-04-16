@@ -3,7 +3,6 @@ package br.edu.ifpb.dac.trainee.controller.form;
 import java.time.LocalDateTime;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import org.springframework.beans.factory.annotation.Autowired;
 import br.edu.ifpb.dac.trainee.controller.service.TaskService;
 import br.edu.ifpb.dac.trainee.model.Category;
 import br.edu.ifpb.dac.trainee.model.Task;
