@@ -7,8 +7,10 @@
 <strong> Aluno: </strong> Tiago Rocha </br>
 <strong> Período: </strong> 2022.1 </br>
    
-   
- ## Script para configuração inicial do Banco
+  
+ ## Instalação
+ 
+ ### Script para configuração inicial do Banco
  Usuário padrão <strong>admin</strong> com  senha <strong>123</strong>
    
     INSERT INTO `profile` (`id`, `name`) VALUES (1, 'ROLE_ALUNO');
@@ -22,5 +24,6 @@
     INSERT INTO `category` (`id`, `name`) VALUES (3, 'CRIACAO CONTEUDO DIGITAL');
     INSERT INTO `category` (`id`, `name`) VALUES (4, 'MANUTENCAO PC');
     INSERT INTO `category` (`id`, `name`) VALUES (5, 'MANUTENCAO REDE');
+
 
     
