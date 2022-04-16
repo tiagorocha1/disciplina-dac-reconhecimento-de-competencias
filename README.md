@@ -17,10 +17,10 @@
     INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES (1, 'admin', 'admin', '$2a$10$.fE23/l3rJnjIK05biQFUuqqLuhbN5BnzHZ25vdh5kl9dmxdIKgBC');
     
     INSERT INTO `user_profiles` (`user_id`, `profiles_id`) VALUES (1, 2);
-    INSERT INTO `category` (`id`, `name`) VALUES (1, 'SUPORTE\\USUARIO');
-    INSERT INTO `category` (`id`, `name`) VALUES (2, 'SUPORTE\\LABORATORIO');
-    INSERT INTO `category` (`id`, `name`) VALUES (3, 'CRIACAO\\CONTEUDO DIGITAL');
-    INSERT INTO `category` (`id`, `name`) VALUES (4, 'MANUTENCAO\\PC');
-    INSERT INTO `category` (`id`, `name`) VALUES (5, 'MANUTENCAO\\REDE');
+    INSERT INTO `category` (`id`, `name`) VALUES (1, 'SUPORTE USUARIO');
+    INSERT INTO `category` (`id`, `name`) VALUES (2, 'SUPORTE LABORATORIO');
+    INSERT INTO `category` (`id`, `name`) VALUES (3, 'CRIACAO CONTEUDO DIGITAL');
+    INSERT INTO `category` (`id`, `name`) VALUES (4, 'MANUTENCAO PC');
+    INSERT INTO `category` (`id`, `name`) VALUES (5, 'MANUTENCAO REDE');
 
     
