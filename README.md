@@ -43,6 +43,8 @@ _A system for recording tasks_
  #### 1) Executar o script para configuração inicial do Banco - Banco de dados MySQL
  Usuário padrão <strong>admin</strong> com  senha <strong>123</strong>
    
+    CREATE DATABASE trainee
+    
     INSERT INTO `profile` (`id`, `name`) VALUES (1, 'ROLE_ALUNO');
     INSERT INTO `profile` (`id`, `name`) VALUES (2, 'ROLE_ADMINISTRADOR');
     
