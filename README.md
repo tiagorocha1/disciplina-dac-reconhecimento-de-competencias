@@ -1,11 +1,11 @@
 # Projeto para obtenção de reconhecimento de competências
 ## 
 ## IFPB - Campus Monteiro    
-    Curso: Análise e Desenvolvimento de Sistemas
-    Disciplina: Desenvolvimento de Aplicações Corporativas
-    Professor: Elenilson Vieira
-    Aluno: Tiago Rocha
-    Período: 2022.1
+<strong> Curso: </strong> Análise e Desenvolvimento de Sistemas </br>
+<strong> Disciplina: </strong> Desenvolvimento de Aplicações Corporativas </br>
+<strong> Professor: </strong> Elenilson Vieira </br>
+<strong> Aluno: </strong> Tiago Rocha </br>
+<strong> Período: </strong> 2022.1 </br>
    
    
  ## Script para configuração inicial do Banco
