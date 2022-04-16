@@ -23,7 +23,7 @@
   
   Entrega:
   - Link do GIT
-  - Vídeo explicativo o código e demonstrando o funcionamento
+  - Vídeo explicativo do código e demonstração do funcionamento
   - Manual para continuação do desenvolvimento (passo a passo para baixar o projeto e fazê-lo rodar)
   - Apresentação (20 minutos)
    
