@@ -1,5 +1,5 @@
 # Projeto para obtenção de reconhecimento de competências
-## 
+
 ## IFPB - Campus Monteiro    
 <strong> Curso: </strong> Análise e Desenvolvimento de Sistemas </br>
 <strong> Disciplina: </strong> Desenvolvimento de Aplicações Corporativas </br>
