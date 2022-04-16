@@ -57,6 +57,7 @@ _A system for recording tasks_
     
 #### 2) Deploy BackEnd
 Importar o projeto na sua IDE de preferência, no Spring Tools Suite: File -> Import -> Git -> Project from Git (with smart import). 
+Finalizada a importação,  no SPS, clicar com o botão direito: run as -> Java Application. 
 
     https://github.com/tiagorocha1/disciplina-dac-reconhecimento-de-competencias.git
 
