@@ -23,6 +23,10 @@
     INSERT INTO `category` (`id`, `name`) VALUES (3, 'CRIACAO CONTEUDO DIGITAL');
     INSERT INTO `category` (`id`, `name`) VALUES (4, 'MANUTENCAO PC');
     INSERT INTO `category` (`id`, `name`) VALUES (5, 'MANUTENCAO REDE');
+    
+### 2) Deploy BackEnd
+
+### 3) Deply FronEnd
 
 
     
