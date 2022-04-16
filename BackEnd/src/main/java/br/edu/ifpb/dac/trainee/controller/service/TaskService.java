@@ -80,4 +80,9 @@ public class TaskService {
 		taskRepository.deleteById(id);		
 	}
 
+	public List<Category> listCategory() {
+ 
+		return categoryRepsitory.findAll();
+	}
+
 }
