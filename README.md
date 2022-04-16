@@ -46,7 +46,7 @@ _A system for recording tasks_
     INSERT INTO `profile` (`id`, `name`) VALUES (1, 'ROLE_ALUNO');
     INSERT INTO `profile` (`id`, `name`) VALUES (2, 'ROLE_ADMINISTRADOR');
     
-    INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES (1, 'admin', 'admin', '$2a$10$.fE23/l3rJnjIK05biQFUuqqLuhbN5BnzHZ25vdh5kl9dmxdIKgBC');
+    INSERT INTO `user` (`id`, `email`, `name`, `password`) VALUES (1, 'admin@task', 'admin', '$2a$10$.fE23/l3rJnjIK05biQFUuqqLuhbN5BnzHZ25vdh5kl9dmxdIKgBC');
     
     INSERT INTO `user_profiles` (`user_id`, `profiles_id`) VALUES (1, 2);
     INSERT INTO `category` (`id`, `name`) VALUES (1, 'SUPORTE USUARIO');
