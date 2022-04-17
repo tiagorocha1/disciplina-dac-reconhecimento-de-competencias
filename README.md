@@ -26,13 +26,21 @@
   - Vídeo explicativo do código e demonstração do funcionamento
   - Manual para continuação do desenvolvimento (passo a passo para baixar o projeto e fazê-lo rodar)
   - Apresentação (20 minutos)
-   
- ##
+
+## Screenshots
+
+![page01](https://user-images.githubusercontent.com/8715162/163701535-da1ae346-9693-468f-abeb-ef14b03f6107.PNG)
+
+![page02](https://user-images.githubusercontent.com/8715162/163701538-051b71c8-3d93-47bd-bf5c-c6ae56544434.PNG)
+
+![page3](https://user-images.githubusercontent.com/8715162/163701546-3951a868-07d5-4f30-a233-50b34339b6a5.PNG)
+
  ### Trainee Tasks
 _A system for recording tasks_
 
 ![N|Solid](https://pivotal.gallerycdn.vsassets.io/extensions/pivotal/vscode-boot-dev-pack/0.1.0/1629148309593/Microsoft.VisualStudio.Services.Icons.Default)
 ![N|Solid](https://raw.githubusercontent.com/GozAttila/GozAttila/main/assets/4_React.png)
+
 
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
