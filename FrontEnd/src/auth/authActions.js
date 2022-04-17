@@ -15,7 +15,7 @@ export function signup(values){
 function submit(email, password, url){
 
     localStorage.removeItem(constants.USERKEY)  
-    localStorage.clear();
+    /*localStorage.clear(); */
     return (
         dispatch =>{
             Axios.post(url,{email: `${email}`, password: `${password}`})

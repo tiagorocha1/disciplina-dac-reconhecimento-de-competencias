@@ -1,5 +1,4 @@
 import constants from '../constants'
-import Axios from 'axios'
 const userKey =   constants.USERKEY//'D%t@woWZNPhTu*RNsjTA'
 
 const INITIAL_STATE = {
@@ -29,8 +28,7 @@ export default (state = INITIAL_STATE, action) => {
             
             state.user = action.payload.data.user
             state.validToken = true
-            alert('payload: '+action.payload.data.user)
-            alert('payload: '+action.payload.data.validToken)
+           
             return { ...state, user: action.payload.data.user, validToken: action.payload.data.validToken }
 
         case  'LOGOUT':

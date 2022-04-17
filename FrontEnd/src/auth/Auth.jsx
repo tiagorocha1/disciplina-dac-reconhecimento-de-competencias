@@ -32,13 +32,13 @@ class Auth extends Component {
         const { login } = this.props
 
         return (
-            <div>
+            <div className="teste">
 
                 <form className="form-signin">
 
                     <div className="text-center mb-4">
                         <img className="logo" src="task-logo.png" alt="" width="68" height="68"/>
-                            <h1 className="h3 mb-3 font-weight-normal">Trainee Tasks</h1>
+                            <h1 className="tracking-in-contract-bck h3 mb-3 font-weight-normal">Trainee Tasks</h1>
                             <p> A system for recording <strong>tasks</strong></p>
                     </div>
 

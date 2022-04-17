@@ -2,6 +2,10 @@
     margin-right: 5px;
 }
 
+.logout {
+    margin-right: 10px;
+}
+
 .markedAsDone {
     text-decoration: line-through;
     color: #777;

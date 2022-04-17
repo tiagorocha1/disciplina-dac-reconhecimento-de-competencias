@@ -1,7 +1,7 @@
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../../node_modules/font-awesome/css/font-awesome.min.css'
 import '../template/custom.css'
-import React, {Component} from "react";
+import React, { Component } from "react";
 import Axios from 'axios'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -10,35 +10,31 @@ import constants from '../constants'
 import Auth from '../auth/Auth'
 import App from './App'
 
-import { validateToken , logout} from "../auth/authActions";
+import { validateToken, logout } from "../auth/authActions";
 import listAllCategory from '../task/taskActions'
 
-class AuthOrApp extends Component{
+class AuthOrApp extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
     }
 
-    componentWillUnmount(){
-      
-        if(this.props.auth.user){           
+    componentWillUnmount() {
+
+        if (this.props.auth.user) {
             this.props.validateToken(this.props.auth.user)
         }
     }
 
-    render (){
-       
-      
-        alert('login: '+this.props.auth.user)
-        alert('login: '+this.props.auth.validToken)
-        
-        if(this.props.auth.validToken){          
+    render() {
+
+        if (this.props.auth.validToken) {
             //Axios.defaults.headers.common['authorization'] = "Bearer "+user.token
-           // Axios.defaults.headers.common = {'Authorization': `bearer ${user.token}`}
-           // return <App>{this.props.children}</App>           
-           return <App> </App>
-        }else if( !this.props.auth.validToken ){
-            return <Auth/>
+            // Axios.defaults.headers.common = {'Authorization': `bearer ${user.token}`}
+            // return <App>{this.props.children}</App>           
+            return <App> </App>
+        } else if (!this.props.auth.validToken) {
+            return <Auth />
         }/*else if(!validToken){
             if(this.props.auth.user){           
                 if(this.props.validateToken(this.props.auth.user)){
@@ -51,12 +47,12 @@ class AuthOrApp extends Component{
                 }
             }  
         }*/
-        else{
+        else {
             return false
         }
     }
 }
 
-const mapStateToProps = state => ({ auth: state.auth})
-const mapDispatchToProps = dispatch => bindActionCreators({validateToken, listAllCategory}, dispatch)
+const mapStateToProps = state => ({ auth: state.auth })
+const mapDispatchToProps = dispatch => bindActionCreators({ validateToken, listAllCategory }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(AuthOrApp)
