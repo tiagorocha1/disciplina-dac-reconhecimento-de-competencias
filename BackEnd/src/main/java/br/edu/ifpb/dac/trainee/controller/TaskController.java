@@ -30,7 +30,6 @@ import br.edu.ifpb.dac.trainee.controller.dto.TaskDto;
 import br.edu.ifpb.dac.trainee.controller.form.TaskFormAdd;
 import br.edu.ifpb.dac.trainee.controller.form.TaskFormUpdate;
 import br.edu.ifpb.dac.trainee.controller.service.TaskService;
-import br.edu.ifpb.dac.trainee.model.Category;
 import br.edu.ifpb.dac.trainee.model.Task;
 
 @RestController()

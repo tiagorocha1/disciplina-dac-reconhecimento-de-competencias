@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import br.edu.ifpb.dac.trainee.model.User;
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
