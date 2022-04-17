@@ -66,6 +66,11 @@ Finalizada a importação,  no STS, clicar com o botão direito: run as -> Java 
 
 
 #### 3) Deply FronEnd
+  1) Instalar o node.js (https://nodejs.org/en/download/)
+  2) Clonar o projeto 
+  3) Entrar na pasta FrontEnd
+  4) Executar o comando npm install (instala todas as dependências configuradas no arquivos package.json)
+  5) Executar o comando npm run dev (roda o projeto na porta 8081 --> http://localhost:8081/?#/tasks ) 
 
 
     
